@@ -24,11 +24,11 @@ Create a node.js application that displays HTML pages at URLs that match the nam
 3) the file is read using the filesystem module and the data is converted using showdown
 4) mustache-express then renders the template.html and inserts the converted html into `{{{content}}}`
 
-![Rendered about-page on localhost](images/2019/09/rendered-about-page-on-localhost.png)
+![Rendered about-page on localhost](images/2019/09/about.png)
 
-![Rendered valves page on localhost](images/2019/09/Screenshot 2019-09-04 at 16.24.32.png)
+![Rendered valves page on localhost](images/2019/09/valves.png)
 
-![Rendered jobs page on localhost](images/2019/09/Screenshot 2019-09-04 at 16.24.41.png)
+![Rendered jobs page on localhost](images/2019/09/jobs.png)
 
 ## Design Decision
 
