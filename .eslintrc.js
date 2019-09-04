@@ -3,7 +3,6 @@ module.exports = {
     browser: true,
     commonjs: true,
     es6: true,
-    cypress: true
   },
   extends: [
     'airbnb-base',
@@ -15,6 +14,13 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2018,
   },
+  // {
+  // "extends": [
+  //   "plugin:cypress/recommended"
+  // ]
+  // },
   rules: {
+    "no-underscore-dangle": "off",
+    "prefer-arrow-callback": "off"
   },
 };
