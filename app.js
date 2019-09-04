@@ -1,9 +1,14 @@
 const express = require('express');
+const mustacheExpress = require('mustache-express');
 
 const app = express();
+app.engine('html', mustacheExpress());
+app.set('view engine', 'html');
+app.set('views', __dirname + '/src/views');
+
 
 app.get('/about-page', function (req, res) {
-  res.send('<h1>The About Page</h1>');
+  res.render('<h1>The About Page</h1>');
 });
 
 app.get('/valves', function (req, res) {
@@ -11,7 +16,7 @@ app.get('/valves', function (req, res) {
 });
 
 app.get('/jobs', function (req, res) {
-  res.send('<h1>The Jobs Page</h1>');
+  res.render('template');
 });
 
 

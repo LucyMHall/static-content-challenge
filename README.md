@@ -14,10 +14,10 @@ Create a node.js application that displays HTML pages at URLs that match the nam
 
 ## How I am ensuring high code quality
 - using eslinter
-- 
+-
 
 ## Testing
 
-* requests to valid URLs return a 200 HTTP status code
-* requests to valid URLS return a body that contains the HTML generated from the relevant `index.md` markdown file
-* requests to URLs that do not match content folders return a 404 HTTP status code
+* [x] requests to valid URLs return a 200 HTTP status code
+* [ ] requests to valid URLS return a body that contains the HTML generated from the relevant `index.md` markdown file
+* [x] requests to URLs that do not match content folders return a 404 HTTP status code
