@@ -8,7 +8,7 @@ const converter = new showdown.Converter();
 const app = express();
 app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
-app.set('views', __dirname + '/src/views');
+app.set('views', `${__dirname}/src/views`);
 
 
 app.get('/about-page', function (req, res) {
@@ -16,7 +16,7 @@ app.get('/about-page', function (req, res) {
   fs.readFile(reqDocPath, 'utf-8', function (err, data) {
     if (err) throw err;
     const convertedHtml = converter.makeHtml(data);
-    res.render('template', {"content": convertedHtml});
+    res.render('template', { content: convertedHtml });
   });
 });
 
@@ -25,7 +25,7 @@ app.get('/valves', function (req, res) {
   fs.readFile(reqDocPath, 'utf-8', function (err, data) {
     if (err) throw err;
     const convertedHtml = converter.makeHtml(data);
-    res.render('template', {"content": convertedHtml});
+    res.render('template', { content: convertedHtml });
   });
 });
 
@@ -34,10 +34,13 @@ app.get('/jobs', function (req, res) {
   fs.readFile(reqDocPath, 'utf-8', function (err, data) {
     if (err) throw err;
     const convertedHtml = converter.makeHtml(data);
-    res.render('template', {"content": convertedHtml});
+    res.render('template', { content: convertedHtml });
   });
 });
 
+app.use(function (req, res, next) {
+  res.status(404).send('404 - Page not Found');
+});
 
 const server = app.listen(5000, function () {
   console.log('Node server is running..');
