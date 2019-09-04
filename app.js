@@ -11,7 +11,7 @@ app.get('/valves', function (req, res) {
 });
 
 app.get('/jobs', function (req, res) {
-  res.send('');
+  res.send('<h1>The Jobs Page</h1>');
 });
 
 
