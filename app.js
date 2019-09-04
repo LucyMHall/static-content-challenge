@@ -12,6 +12,8 @@ app.get('/about-page', function (req, res) {
 });
 
 app.get('/valves', function (req, res) {
+  const reqDocPath = `./content${req.route.path}/index.md`
+  console.log(reqDocPath)
   res.render('template');
 });
 

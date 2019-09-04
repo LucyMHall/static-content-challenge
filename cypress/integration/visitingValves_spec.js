@@ -7,9 +7,9 @@ describe('visitingValves', function () {
     cy.visit('http://localhost:5000/jobs')
     cy.get('title').should('have.text', 'Welcome to Acme');
   });
-  
-  it('displays the placeholder text The Valves Page when about page is visited', function() {
+
+  it('displays the contents of the correct markdown file in the body', function() {
     cy.visit('http://localhost:5000/valves');
-    cy.get('h1').should('have.text', 'The Valves Page');
+    cy.get('body').should('have.text', "Valves\nAcme Co. valves are amongst the highest quality in the industry. Whether it's for industrial, commercial, medical or space exploration, you can always count on an Acme Co. valve.");
   });
 });
