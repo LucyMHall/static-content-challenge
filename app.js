@@ -21,7 +21,7 @@ app.get('/valves', function (req, res) {
     if (err) throw err;
     const convertedHtml = converter.makeHtml(data);
     console.log(convertedHtml);
-    res.render('template');
+    res.render('template', {"content": convertedHtml});
   });
 });
 
