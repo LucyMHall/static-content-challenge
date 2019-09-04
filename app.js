@@ -12,7 +12,12 @@ app.set('views', __dirname + '/src/views');
 
 
 app.get('/about-page', function (req, res) {
-  res.render('template');
+  const reqDocPath = `./content${req.route.path}/index.md`;
+  fs.readFile(reqDocPath, 'utf-8', function (err, data) {
+    if (err) throw err;
+    const convertedHtml = converter.makeHtml(data);
+    res.render('template', {"content": convertedHtml});
+  });
 });
 
 app.get('/valves', function (req, res) {
@@ -20,13 +25,17 @@ app.get('/valves', function (req, res) {
   fs.readFile(reqDocPath, 'utf-8', function (err, data) {
     if (err) throw err;
     const convertedHtml = converter.makeHtml(data);
-    console.log(convertedHtml);
     res.render('template', {"content": convertedHtml});
   });
 });
 
 app.get('/jobs', function (req, res) {
-  res.render('template');
+  const reqDocPath = `./content${req.route.path}/index.md`;
+  fs.readFile(reqDocPath, 'utf-8', function (err, data) {
+    if (err) throw err;
+    const convertedHtml = converter.makeHtml(data);
+    res.render('template', {"content": convertedHtml});
+  });
 });
 
 
