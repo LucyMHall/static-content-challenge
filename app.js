@@ -8,11 +8,11 @@ app.set('views', __dirname + '/src/views');
 
 
 app.get('/about-page', function (req, res) {
-  res.render('<h1>The About Page</h1>');
+  res.render('template');
 });
 
 app.get('/valves', function (req, res) {
-  res.send('<h1>The Valves Page</h1>');
+  res.render('template');
 });
 
 app.get('/jobs', function (req, res) {
