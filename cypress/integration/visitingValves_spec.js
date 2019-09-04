@@ -1,0 +1,6 @@
+describe('visitingValves', function () {
+  it('displays the placeholder text The Valves Page when about page is visited', function() {
+    cy.visit('http://localhost:5000/valves');
+    cy.get('h1').should('have.text', 'The Valves Page');
+  });
+});

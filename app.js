@@ -7,7 +7,7 @@ app.get('/about-page', function (req, res) {
 });
 
 app.get('/valves', function (req, res) {
-  res.send('');
+  res.send('<h1>The Valves Page</h1>');
 });
 
 app.get('/jobs', function (req, res) {
