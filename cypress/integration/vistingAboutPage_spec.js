@@ -4,12 +4,22 @@ describe('visitingAboutPage', function () {
   });
 
   it('displays the contents of the template file e.g. the title', function() {
-    cy.visit('http://localhost:5000/jobs')
+    cy.visit('http://localhost:5000/about-page')
     cy.get('title').should('have.text', 'Welcome to Acme');
   });
-  
-  it('displays the placeholder text The About Page when about page is visited', function() {
+
+  it('displays the header of correct markdown file in the body', function() {
     cy.visit('http://localhost:5000/about-page');
-    cy.get('h1').should('have.text', 'The About Page');
+    const mdHeaderForAboutPage = 'This is the About page'
+    cy.get('h1').contains(mdHeaderForAboutPage);
   });
+
+  it('displays the paragraph of correct markdown file in the body', function() {
+    cy.visit('http://localhost:5000/about-page');
+    const mdPara1AboutPage = "Acme Co. is a reputable maker of widgets and is an international brand.";
+    const mdPara2AboutPage = "Thank you for your interest in our services. Please contact us at enquiries@acme.com."
+    cy.get('p').first().contains(mdPara1AboutPage);
+    cy.get('p').last().contains(mdPara2AboutPage);
+  });
+
 });
