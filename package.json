@@ -1,0 +1,26 @@
+{
+  "name": "static-content-challenge",
+  "version": "1.0.0",
+  "description": "a node.js web application which provides static web pages depending on urls entered",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucyMHall/static-content-challenge.git"
+  },
+  "author": "LucyMHall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucyMHall/static-content-challenge/issues"
+  },
+  "homepage": "https://github.com/LucyMHall/static-content-challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.3.0"
+  }
+}
