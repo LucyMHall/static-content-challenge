@@ -7,11 +7,11 @@ app.get('/about-page', function (req, res) {
 });
 
 app.get('/valves', function (req, res) {
-  res.send('<h1>The Valves Page</h1>');
+  res.send('');
 });
 
 app.get('/jobs', function (req, res) {
-  res.send('<h1>The Jobs Page</h1>');
+  res.send('');
 });
 
 
