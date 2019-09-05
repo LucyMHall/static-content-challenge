@@ -12,33 +12,36 @@ app.set('views', `${__dirname}/src/views`);
 
 
 app.get('/about-page', function (req, res) {
-  const reqDocPath = `./content${req.route.path}/index.md`;
-  fs.readFile(reqDocPath, 'utf-8', function (err, data) {
+  const urlPath = req.route.path;
+  const markdownFilePath = `./content${urlPath}/index.md`;
+  fs.readFile(markdownFilePath, 'utf-8', function (err, contentOfMarkdownFile) {
     if (err) throw err;
-    const convertedHtml = converter.makeHtml(data);
-    res.render('template', { content: convertedHtml });
+    const convertedMdToHtmlContent = converter.makeHtml(contentOfMarkdownFile);
+    res.render('template', { content: convertedMdToHtmlContent });
   });
 });
 
 app.get('/valves', function (req, res) {
-  const reqDocPath = `./content${req.route.path}/index.md`;
-  fs.readFile(reqDocPath, 'utf-8', function (err, data) {
+  const urlPath = req.route.path;
+  const markdownFilePath = `./content${urlPath}/index.md`;
+  fs.readFile(markdownFilePath, 'utf-8', function (err, contentOfMarkdownFile) {
     if (err) throw err;
-    const convertedHtml = converter.makeHtml(data);
-    res.render('template', { content: convertedHtml });
+    const convertedMdToHtmlContent = converter.makeHtml(contentOfMarkdownFile);
+    res.render('template', { content: convertedMdToHtmlContent });
   });
 });
 
 app.get('/jobs', function (req, res) {
-  const reqDocPath = `./content${req.route.path}/index.md`;
-  fs.readFile(reqDocPath, 'utf-8', function (err, data) {
+  const urlPath = req.route.path;
+  const markdownFilePath = `./content${urlPath}/index.md`;
+  fs.readFile(markdownFilePath, 'utf-8', function (err, contentOfMarkdownFile) {
     if (err) throw err;
-    const convertedHtml = converter.makeHtml(data);
-    res.render('template', { content: convertedHtml });
+    const convertedMdToHtmlContent = converter.makeHtml(contentOfMarkdownFile);
+    res.render('template', { content: convertedMdToHtmlContent });
   });
 });
 
-app.use(function (req, res, next) {
+app.use(function (req, res) {
   res.status(404).send('404 - Page not Found');
 });
 
