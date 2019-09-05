@@ -38,10 +38,8 @@ Create a node.js application that displays HTML pages at URLs that match the nam
 
 
 ### Not reducing the size of the controller
-- I attempted to move out the logic into a module, or several modules which could then be unit tested, but I kept having problems with `fs.readFile()` and callbacks.
-- I also looked into using one route to handle multiple url paths, with all the allowed paths stored in an array e.g. `app.get(["/valves", "/jobs", "/about-page"], function (req, res))`
-- I understand that this leaves my code not DRY but with a little guidance I think I could fix this relatively easily
-
+- I attempted to move out the logic into a module, or several modules which could then be unit tested, but I kept having problems with the async nature of `fs.readFile()`
+- I also looked into using one route to handle multiple url paths, given that each path is handled in the same way however I couldn't quite wrap my head around it. Although this leaves my code not as DRY as I would like it does mean that it would be easier to alter in the future if the behaviour of only 1 of the routes changed. If this is unlikely to happen I believe that with a little guidance I could DRY this code up quickly.
 
 ## Running the Code
 - if you have not already, run `npm install` to install all the dependencies in the package.json file
@@ -57,6 +55,7 @@ Create a node.js application that displays HTML pages at URLs that match the nam
 
 ### How to run tests:
 - if you have not already, run `npm install` to install all the dependencies in the package.json file, including cypress
+- make sure that the server is running `$ node app.js`
 - navigate into `static-content-challenge` and run`$ ./node_modules/.bin/cypress run`
 
 ### To look at individual test code:
